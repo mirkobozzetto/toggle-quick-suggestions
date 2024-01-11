@@ -1,5 +1,6 @@
 {
   "name": "toggle-quick-suggestions",
+  "publisher": "MirkoBozzetto",
   "repository": {
     "type": "git",
     "url": "https://github.com/mirkobozzetto/toggle-quick-suggestions"
