@@ -1,5 +1,9 @@
 {
   "name": "toggle-quick-suggestions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mirkobozzetto/toggle-quick-suggestions"
+  },
   "displayName": "toggle Quick Suggestions",
   "description": "Toggle Quick Suggestions with a shortcut for a personalized coding experience and educational purposes.",
   "version": "0.0.1",
@@ -7,7 +11,7 @@
     "vscode": "^1.85.0"
   },
   "categories": [
-    "Other"
+    "Education"
   ],
   "activationEvents": [
     "onCommand: toggle-quick-suggestions.toggle"
