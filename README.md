@@ -1,4 +1,4 @@
-# toggle-quick-suggestions README
+# toggle-quick-suggestions
 
 The "toggle-quick-suggestions" extension for Visual Studio Code. This extension is designed to enhance your coding experience by allowing you to easily toggle the auto-suggestion feature, making it ideal for both learning and content creation.
 
@@ -13,7 +13,7 @@ The "toggle-quick-suggestions" extension for Visual Studio Code. This extension 
 This extension contributes to the following settings:
 
 - `toggle-quick-suggestions.enable`: Enable or disable the quick suggestions toggle feature.
-- Shortcut Key: Use a custom shortcut key to activate the extension (default is `Cmd+Option+K` on Mac and `Ctrl+Alt+K` on Windows/Linux).
+- Shortcut Key: Use a custom shortcut key to activate the extension (default is `Cmd+Option+V` on Mac and `Ctrl+Alt+V` on Windows/Linux).
 
 ## Known Issues
 

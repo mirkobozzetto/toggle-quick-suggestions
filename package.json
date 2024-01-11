@@ -1,6 +1,7 @@
 {
   "name": "toggle-quick-suggestions",
   "publisher": "MirkoBozzetto",
+  "icon": "toggle.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/mirkobozzetto/toggle-quick-suggestions"
@@ -28,10 +29,10 @@
     "keybindings": [
       {
         "command": "toggle-quick-suggestions.toggle",
-        "key": "ctrl+alt+k",
+        "key": "ctrl+alt+v",
         "when": "editorTextFocus",
-        "mac": "cmd+option+k",
-        "linux": "ctrl+alt+k"
+        "mac": "cmd+option+v",
+        "linux": "ctrl+alt+v"
       }
     ]
   },
