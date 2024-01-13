@@ -14,11 +14,9 @@ export function activate(context: vscode.ExtensionContext) {
         "suggestOnTriggerCharacters"
       ) as boolean;
 
-      // Bascule entre "on" et "off" pour quickSuggestions
       const newQuickSuggestionsState =
         quickSuggestions.other === "on" ? "off" : "on";
 
-      // Bascule le booléen pour suggestOnTriggerCharacters
       const newSuggestOnTriggerCharactersState = !suggestOnTriggerCharacters;
 
       await editorConfig.update(
