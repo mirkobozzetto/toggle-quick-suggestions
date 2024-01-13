@@ -4,22 +4,43 @@ export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
     "toggle-quick-suggestions.toggle",
     async () => {
-      const config = vscode.workspace.getConfiguration("editor");
-      const quickSuggestions = config.get("quickSuggestions") as {
+      const editorConfig = vscode.workspace.getConfiguration("editor");
+      const quickSuggestions = editorConfig.get("quickSuggestions") as {
         other: string;
         comments: string;
         strings: string;
       };
+      const suggestOnTriggerCharacters = editorConfig.get(
+        "suggestOnTriggerCharacters"
+      ) as boolean;
 
-      quickSuggestions.other = quickSuggestions.other === "on" ? "off" : "on";
+      // Bascule entre "on" et "off" pour quickSuggestions
+      const newQuickSuggestionsState =
+        quickSuggestions.other === "on" ? "off" : "on";
 
-      await config.update(
+      // Bascule le booléen pour suggestOnTriggerCharacters
+      const newSuggestOnTriggerCharactersState = !suggestOnTriggerCharacters;
+
+      await editorConfig.update(
         "quickSuggestions",
-        quickSuggestions,
+        {
+          other: newQuickSuggestionsState,
+          comments: newQuickSuggestionsState,
+          strings: newQuickSuggestionsState,
+        },
         vscode.ConfigurationTarget.Global
       );
+
+      await editorConfig.update(
+        "suggestOnTriggerCharacters",
+        newSuggestOnTriggerCharactersState,
+        vscode.ConfigurationTarget.Global
+      );
+
       vscode.window.showInformationMessage(
-        `Quick Suggestions for 'other' turned ${quickSuggestions.other}`
+        `Quick Suggestions turned ${newQuickSuggestionsState} and Suggest on Trigger Characters turned ${
+          newSuggestOnTriggerCharactersState ? "on" : "off"
+        }`
       );
     }
   );
@@ -28,3 +49,35 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {}
+
+//  & old and incomplete version (simple backup)...
+// import * as vscode from "vscode";
+
+// export function activate(context: vscode.ExtensionContext) {
+//   let disposable = vscode.commands.registerCommand(
+//     "toggle-quick-suggestions.toggle",
+//     async () => {
+//       const config = vscode.workspace.getConfiguration("editor");
+//       const quickSuggestions = config.get("quickSuggestions") as {
+//         other: string;
+//         comments: string;
+//         strings: string;
+//       };
+
+//       quickSuggestions.other = quickSuggestions.other === "on" ? "off" : "on";
+
+//       await config.update(
+//         "quickSuggestions",
+//         quickSuggestions,
+//         vscode.ConfigurationTarget.Global
+//       );
+//       vscode.window.showInformationMessage(
+//         `Quick Suggestions for 'other' turned ${quickSuggestions.other}`
+//       );
+//     }
+//   );
+
+//   context.subscriptions.push(disposable);
+// }
+
+// export function deactivate() {}
