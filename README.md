@@ -1,5 +1,7 @@
 # toggle-quick-suggestions
 
+https://marketplace.visualstudio.com/items?itemName=MirkoBozzetto.toggle-quick-suggestions
+
 The "toggle-quick-suggestions" extension for Visual Studio Code. This extension is designed to enhance your coding experience by allowing you to easily toggle the auto-suggestion feature, making it ideal for both learning and content creation.
 
 ## Features
